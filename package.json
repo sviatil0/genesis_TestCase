@@ -1,0 +1,20 @@
+{
+  "name": "learning-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "coinbase": "^2.0.8",
+    "coinbase-pro-node": "^5.0.0",
+    "coinbase-pro-node-api": "^4.0.1",
+    "currencyapi-node": "^1.0.0",
+    "express": "^4.18.1",
+    "js-yaml": "^4.1.0"
+  }
+}
