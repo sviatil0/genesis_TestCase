@@ -1,31 +1,24 @@
 const express = require('express');
 const fs = require('fs');
-
 const bodyParser = require('body-parser');
-
 const lowdb = require('lowdb');
-
 const FileS = require("lowdb/adapters/FileSync");
-
 const ad = new FileS("db.json");
+const nodemailer = require('nodemailer'); 
+
 const db = lowdb(ad);
 
-
-
-
-let newData={
-    "email":"1@gmail.com"
-};
-
-
-
-
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'no.reply.genesisTestCase@gmail.com',
+      pass: 'bpcifhojdanmvqyw'
+    }
+  });
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 const swaggerUI = require('swagger-ui-express');
-const swaggerJsDoc = require('swagger-jsdoc');
-const { listenerCount } = require('events');
 swaggerDocument = require('./swagger.json');
 
 const Client = require('coinbase').Client;
@@ -36,6 +29,9 @@ const client = new Client({
   });
 
 currencyCode = 'UAH'
+
+
+
 
 app.get('/api/rate', (req,res) => {
         client.getSpotPrice({"currency": currencyCode}, function(err, price) {
@@ -58,6 +54,35 @@ app.post('/api/subscribe', (req,res) => {
         res.send(409);
     }
    
+});
+
+app.post('/api/sendEmails', (req,res) => {
+    emails_array = app.db.get('emails').value();
+    let a =  client.getSpotPrice({"currency": currencyCode}, function(err, price) {
+        
+        emails_array.forEach( item => {
+            
+            let letter = {
+                from: "no.reply.genesisTestCase@gmail.com",
+                to: item.email,
+                subject: "Here is new BTC rate in UAH",
+                text: `BTC-${currencyCode} : ${ price.data.amount} ${currencyCode}`
+        };
+
+            transporter.sendMail(letter, function(error, info){
+                if (error) {
+                  console.log(error);
+                } else {
+                  console.log('Email sent: ' + info.response);
+                }
+            });
+              
+        
+        }); 
+              
+    });
+        res.sendStatus(200);
+
 });
 
 
