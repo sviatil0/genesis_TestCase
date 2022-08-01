@@ -58,7 +58,7 @@ app.post('/api/subscribe', (req,res) => {
 
 app.post('/api/sendEmails', (req,res) => {
     emails_array = app.db.get('emails').value();
-    let a =  client.getSpotPrice({"currency": currencyCode}, function(err, price) {
+      client.getSpotPrice({"currency": currencyCode}, function(err, price) {
         
         emails_array.forEach( item => {
             
@@ -89,7 +89,7 @@ app.post('/api/sendEmails', (req,res) => {
 
 //Server part
 //PORT 
-const port = process.env.PORT || 3000
+const port = 4000;
 app.db = db;
 
 

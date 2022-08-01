@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "title": "GSES2 BTC application"
   },
-  "host": "localhost:5000",
+  "host": "localhost:4000",
   "basePath": "/api",
   "tags": [
     {
