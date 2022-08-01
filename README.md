@@ -8,7 +8,7 @@
 5.    nodemon: ^2.0.19,
 6.    swagger-jsdoc: ^6.2.1,
 7.    swagger-ui-express: ^4.5.0,
-8.    Docker ^4.11.0
+8.    Docker: ^4.11.0
 
 ## Installation
 ```
