@@ -11,7 +11,7 @@
 8.    Docker: ^4.11.0
 
 ## Installation
-```bash
+```console
 git clone git@github.com:sviatil0/genesis_TestCase.git 
 
 ```
@@ -20,7 +20,7 @@ git clone git@github.com:sviatil0/genesis_TestCase.git
 1. Install all the dependencies 
 2. Run 
 
-```bash
+```console
 docker run -it -p 4000:4000 -v ${pwd}:/app  genesis-test-case //Windows PowerShell
 
 docker run -t -p 4000:4000 genesis-test-case // If linux
