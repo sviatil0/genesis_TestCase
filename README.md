@@ -31,6 +31,7 @@ docker run -t -p 4000:4000 genesis-test-case // If linux
 ### How it is working?
 
 In this project I used CoinBase's API for node.js, to obtain the current information about the spot price of the BTC in UAH. I made a database in the JSON file, in which I am storing the subscribed emails. I am using the nodemailer and Gmail BOT account to send all the information to the emails in a database.
+
 I chose coinbase for its reputation as a very trustworthy service.
 
 Quote from -> https://www.softwaretestinghelp.com/coinbase-review/
