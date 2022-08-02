@@ -34,4 +34,4 @@ I chose coinbase for its reputation as a very trustworthy service.
 
 Quote from -> https://www.softwaretestinghelp.com/coinbase-review/
 
-***Coinbase – one of the most trusted, safe, and legit cryptocurrency.***
+***Coinbase – one of the most trusted, safe, and legit cryptocurrency exchanges.***
