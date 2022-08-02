@@ -17,23 +17,14 @@ git clone git@github.com:sviatil0/genesis_TestCase.git
 ```
 ## How to use?
 
-1. Install all the dependencies
- 
+1. Run (***It will automatically install all necessary dependencies***).
 ```console
-npm i coinbase express lowdb nodemailer nodemon swagger-jsdoc swagger-ui-express 
-```
-2. Run 
 
-```console
-docker run -it -p 4000:4000 -v ${pwd}:/app  genesis-test-case //Windows PowerShell
-
-docker run -t -p 4000:4000 genesis-test-case // If linux
+docker run -t -p 4000:4000 genesis-test-case 
 
 ```
 
-
-
-3. Use the link "localhost:4000/api" in your browser. 
+2. Use the link "localhost:4000/api" in your browser. 
 
 ### How it is working?
 
